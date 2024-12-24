@@ -27,6 +27,7 @@
             "name": "xelatex",
             "command": "xelatex",
             "args": [
+                "-shell-escape",
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-output-directory=./tmp",
