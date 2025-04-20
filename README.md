@@ -7,7 +7,7 @@
 - 支持 gb7714-2015 标准的参考文献格式
 - 包含常用的 LaTeX 格式示例（列表、图片、表格、代码等）
 - 使用 minted 包实现代码高亮
-- 预配置的 VSCode/Cursor 工作区设置
+- 预配置的 VSCode 工作区设置
 - 使用 XeLaTeX 编译引擎
 
 ## 使用方法
@@ -15,17 +15,17 @@
 ### 环境要求
 
 1. 安装 TeX Live
-2. 安装 VSCode 或 Cursor
-3. 安装 VSCode 或 Cursor 的 LaTeX Workshop 插件
+2. 安装 VSCode
+3. 安装 VSCode 的 LaTeX Workshop 插件
 4. 安装 Python
 5. 安装 Pygments（用于代码高亮）
    ```bash
    # 推荐使用 pipx 安装，可以避免污染全局 Python 环境
    pip install pipx
-   pipx install Pygments
+   pipx install Pygments==2.18.0
    
    # 或者直接使用 pip 安装
-   pip install Pygments
+   pip install Pygments==2.18.0
    ```
 
 ### 项目结构
@@ -33,7 +33,7 @@
 ```
 .
 ├── .vscode/
-│ └── settings.json # VSCode/Cursor 工作区配置
+│ └── settings.json # VSCode工作区配置
 ├── report.tex # 报告主文件
 ├── reference.bib # 参考文献文件
 └── tmp/ # 编译输出目录
@@ -41,7 +41,7 @@
 
 ### 编译方法
 
-使用 VSCode/Cursor 打开项目文件夹，打开 `report.tex` 文件，按下 `Ctrl+S` 保存时会自动触发编译，或者使用命令行：
+使用 VSCode 打开项目文件夹，打开 `report.tex` 文件，按下 `Ctrl+S` 保存时会自动触发编译，或者使用命令行：
 
 ```bash
 xelatex -shell-escape report
@@ -52,7 +52,7 @@ xelatex -shell-escape report
 
 注意：使用 minted 包时必须添加 `-shell-escape` 参数。
 
-## VSCode/Cursor 配置说明
+## VSCode 配置说明
 
 项目中的 `.vscode/settings.json` 已经预配置了 LaTeX 相关的设置，包括：
 
