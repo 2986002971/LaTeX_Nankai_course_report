@@ -52,6 +52,24 @@ xelatex -shell-escape report
 
 注意：使用 minted 包时必须添加 `-shell-escape` 参数。
 
+## minted 配置与报错说明
+
+由于 TeX Live 更新导致 minted 包的使用方式存在差异，请根据您的环境选择正确的配置：
+
+- **TeX Live 2024 及更早版本**（使用 Pygments 2.18.0）
+  ```latex
+  \usepackage[outputdir=./tmp]{minted}
+  ```
+
+- **TeX Live 2025 及更新版本**（使用 Pygments 2.18.0）
+  ```latex
+  \usepackage{minted}
+  ```
+
+您可以通过运行 `tlmgr --version` 命令查看当前安装的 TeX Live 版本，然后在 `report.tex` 文件中相应地调整 minted 包的导入语句。
+
+如果编译过程中出现有关 minted 无法找到输出文件的错误，很可能是由于版本配置不匹配导致的。请根据上述指南进行调整。
+
 ## VSCode 配置说明
 
 项目中的 `.vscode/settings.json` 已经预配置了 LaTeX 相关的设置，包括：
